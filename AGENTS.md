@@ -10,10 +10,10 @@
 
 | 角色設定檔 | 角色名稱 / 職位 | 掛載 Skills | 核心職責 | 嚴格行為邊界（禁止行為） |
 | :--- | :--- | :--- | :--- | :--- |
-| [architect.md](file:///.agents/architect.md) | **@architect**<br>(架構師 / PM) | `ponytail`<br>`codegraph` | • 需求釐清與拆解任務清單<br>• 維護專案進度與驗收標準 (DoD)<br>• 制定前後端 API Contract<br>• 設計資料庫 Schema | **只做規劃、設計與任務派發。**<br>❌ 嚴禁直接撰寫或修改任何具體的前後端業務程式碼。 |
-| [frontend.md](file:///.agents/frontend.md) | **@frontend**<br>(前端工程師) | `impeccable`<br>`codegraph` | • UI 元件開發與頁面切版<br>• 客戶端狀態管理與互動體驗<br>• 嚴格遵循 `impeccable` 質感規範<br>• 依照 API Contract 串接資料 | **嚴格依照架構師定義之契約串接。**<br>❌ 嚴禁擅自修改後端 API 路由或資料庫結構。<br>⚠️ 缺漏欄位必須向 `@architect` 提出變更申請。 |
-| [backend.md](file:///.agents/backend.md) | **@backend**<br>(後端工程師) | `codegraph` | • API 端點實作與商業邏輯<br>• 資料庫操作 (ORM/Migration)<br>• 身分驗證、授權與安全性防護<br>• 核心單元測試與效能調校 | **修改既有函式前必先用 `codegraph` 查影響。**<br>❌ 嚴禁修改前端 UI 樣式、HTML/CSS 與元件。<br>❌ 禁止未通知架構師即私自破壞 API Contract。 |
-| [qa-reviewer.md](file:///.agents/qa-reviewer.md) | **@qa-reviewer**<br>(測試與品質工程師) | `playwright-cli`<br>`open-code-review`<br>`codegraph` | • Git 變更之自動化 Code Review<br>• `playwright-cli` 啟動無頭瀏覽器 E2E 驗證<br>• 監控 Console 報錯與 Network 狀態<br>• 定位 Bug 根因與截圖舉證 | **只負責審查、測試、舉證與定位。**<br>❌ 嚴禁直接大幅重寫業務功能程式碼。<br>⚠️ 發現問題必須撰寫結構化報告退回工程師修復。 |
+| [architect.md](file:///.agents/agents/architect.md) | **@architect**<br>(架構師 / PM) | `ponytail`<br>`codegraph` | • 需求釐清與拆解任務清單<br>• 維護專案進度與驗收標準 (DoD)<br>• 制定前後端 API Contract<br>• 設計資料庫 Schema | **只做規劃、設計與任務派發。**<br>嚴禁直接撰寫或修改任何具體的前後端業務程式碼。 |
+| [frontend.md](file:///.agents/agents/frontend.md) | **@frontend**<br>(前端工程師) | `impeccable`<br>`codegraph` | • UI 元件開發與頁面切版<br>• 客戶端狀態管理與互動體驗<br>• 嚴格遵循 `impeccable` 質感規範<br>• 依照 API Contract 串接資料 | **嚴格依照架構師定義之契約串接。**<br>嚴禁擅自修改後端 API 路由或資料庫結構。<br>缺漏欄位必須向 `@architect` 提出變更申請。 |
+| [backend.md](file:///.agents/agents/backend.md) | **@backend**<br>(後端工程師) | `codegraph` | • API 端點實作與商業邏輯<br>• 資料庫操作 (ORM/Migration)<br>• 身分驗證、授權與安全性防護<br>• 核心單元測試與效能調校 | **修改既有函式前必先用 `codegraph` 查影響。**<br>嚴禁修改前端 UI 樣式、HTML/CSS 與元件。<br>禁止未通知架構師即私自破壞 API Contract。 |
+| [qa-reviewer.md](file:///.agents/agents/qa-reviewer.md) | **@qa-reviewer**<br>(測試與品質工程師) | `playwright-cli`<br>`open-code-review`<br>`codegraph` | • Git 變更之自動化 Code Review<br>• `playwright-cli` 啟動無頭瀏覽器 E2E 驗證<br>• 監控 Console 報錯與 Network 狀態<br>• 定位 Bug 根因與截圖舉證 | **只負責審查、測試、舉證與定位。**<br>嚴禁直接大幅重寫業務功能程式碼。<br>發現問題必須撰寫結構化報告退回工程師修復。 |
 
 ---
 
@@ -30,7 +30,7 @@
    - **審查驗收**：`open-code-review` 代碼審查 + `playwright-cli` 無頭瀏覽器 E2E 驗證與 Console 監控。
    - **流程分流**：
      - **驗收通過** ➔ 產出驗收報告並結案。
-     - **發現缺陷** ➔ 產出標準 Bug Report 退回修復（⚠️ **同一缺陷修復 ≤ 2 次允許重試；超過 2 次強制觸發熔斷，喚醒 `@architect` 介入仲裁與架構重估**）。
+     - **發現缺陷** ➔ 產出標準 Bug Report 退回修復（**同一缺陷修復 ≤ 2 次允許重試；超過 2 次強制觸發熔斷，喚醒 `@architect` 介入仲裁與架構重估**）。
 
 ---
 
@@ -71,8 +71,7 @@
 
 ### 4.1 標準任務完成交接格式
 
-```markdown
-### 📋 任務完成交接報告
+### 任務完成交接報告
 
 - **任務名稱 / ID**：[例如：AUTH-002 使用者登入 API 與前端表單串接]
 - **執行角色**：[@frontend / @backend]
@@ -97,20 +96,18 @@
 
 #### 5. 下一步行動建議
 - 請 `@qa-reviewer` 使用 `playwright-cli` 進行無頭瀏覽器端對端驗收，並執行 `open-code-review`。
-```
 
 ---
 
 ### 4.2 標準缺陷退回報告格式
 
-```markdown
-### 🚨 缺陷退回報告
+### 缺陷退回報告
 
 - **缺陷標題**：[例如：密碼包含特殊字元時登入請求回傳 500 錯誤]
 - **提報人**：@qa-reviewer
 - **指派修復角色**：[@backend]
 - **嚴重等級**：[Critical / Major / Minor]
-- **退回次數計數**：[第 1 次 / 第 2 次（⚠️ 連續 2 次未通過將強制觸發熔斷並標記 @architect）]
+- **退回次數計數**：[第 1 次 / 第 2 次（連續 2 次未通過將強制觸發熔斷並標記 @architect）]
 
 #### 1. 重現步驟
 1. 開啟首頁並點擊「登入」按鈕。
@@ -130,4 +127,3 @@
 
 #### 5. 修復要求
 - 請 `@backend` 於 `src/utils/sanitizer.ts` 補齊特殊字元轉義處理，並為該字元組合新增單元測試用例。
-```
