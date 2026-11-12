@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "skills": {
+    "add-lang": {
+      "source": "colbymchenry/codegraph",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/add-lang/SKILL.md",
+      "computedHash": "3d650c6106aa6117926dc3ee948491e79b522ef9584a297b1e77131beabfea71"
+    },
+    "agent-eval": {
+      "source": "colbymchenry/codegraph",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/agent-eval/SKILL.md",
+      "computedHash": "ce559ff6a89d8acfd9ad5c2c47f1ed22fe573d64d2a65966a08682953468b65d"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "86e265bf3df79c65215f7244d71892ca278370d56dec47a8cc15e8373db3f714"
+    },
+    "open-code-review": {
+      "source": "alibaba/open-code-review",
+      "sourceType": "github",
+      "skillPath": "skills/open-code-review/SKILL.md",
+      "computedHash": "d8c4daf820a44e3342faffdd58208650ff43ae4c1511902a4d8c95d6aeeaf16b"
+    },
+    "open-code-review-delegate": {
+      "source": "alibaba/open-code-review",
+      "sourceType": "github",
+      "skillPath": "skills/open-code-review-delegate/SKILL.md",
+      "computedHash": "828b20ccd9de9270aa77c031fa00068e49e356b8042f426cc51bd5338daadeac"
+    },
+    "playwright-cli": {
+      "source": "microsoft/playwright-cli",
+      "sourceType": "github",
+      "skillPath": "skills/playwright-cli/SKILL.md",
+      "computedHash": "d3c50339092b670cdda1ba2bed0bdee1c34247cdf70df475e8b7d83983a39e79"
+    },
+    "ponytail": {
+      "source": "DietrichGebert/ponytail",
+      "sourceType": "github",
+      "skillPath": "skills/ponytail/SKILL.md",
+      "computedHash": "56d72677aca02689ac89bd48734e8c19b40ab86716d1257eaf5f1238b43cda6b"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "os-project-mvp",
+  "version": "1.0.0",
+  "description": "Operating System MVP Demo",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@alibaba-group/open-code-review": "^1.13.8",
+    "@colbymchenry/codegraph": "^1.6.2",
+    "@playwright/cli": "^0.1.24"
+  }
+}
